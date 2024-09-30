@@ -23,10 +23,10 @@ public class ArrayMethods {
 
 
     ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
-    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + swapRC(ary));
+    System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + arrToString(swapRC(ary)));
 
     ary = new int[][]{{-2, 3}, {1, 5}, {-2, 3}};
-    System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + swapRC(ary));
+    System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + arrToString(swapRC(ary)));
 
   }
 //2. Copy your arrToString method from before.
@@ -86,6 +86,12 @@ public class ArrayMethods {
   * e.g. swapRC({{1,2,3},{4,5,6}}) returns {{1,4},{2,5},{3,6}}
     */
   public static int[][] swapRC(int[][]nums){
-    return new int[1][1];
+    int[][] newNums = new int[nums[0].length][nums.length];
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[0].length; j++) {
+        newNums[j][i] = nums[i][j];
+      }
+    }
+    return newNums;
   }
 }
