@@ -11,6 +11,23 @@ public static void main(String[] args) {
   ary = new int[][]{{}, {}, {}};
   System.out.println("Expected: [[], [], []]; Result: "  + arrToString(int[][] ary));
 
+
+  ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10}};
+  System.out.println("Expected: 55; Result: "  + arr2DSum(int[][] ary));
+
+  ary = new int[][]{{}, {}, {}};
+  System.out.println("Expected: 0; Result: "  + arr2DSum(int[][] ary));
+
+  ary = new int[][]{{2}, {5}, {-1}};
+  System.out.println("Expected: 6; Result: "  + arr2DSum(int[][] ary));
+
+
+  ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
+  System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + swapRC(int[][] ary));
+
+  ary = new int[][]{{-2, 3}, {1, 5}, {-2, 3}};
+  System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + swapRC(int[][] ary));
+
 }
 //2. Copy your arrToString method from before.
 /**Return a String that represets the array in the format:
