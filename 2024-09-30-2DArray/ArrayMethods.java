@@ -3,7 +3,7 @@
 public class ArrayMethods {
   public static void main(String[] args) {
 
-    //arrToString test cases
+    //arrToString() test cases
 
     int[][] ary = new int[][]{{1, 2, 3}, {5, 6, 7}, {8, 9, 10}};
     System.out.println("Expected: [[1, 2, 3], [5, 6, 7], [8, 9, 10]]; Result: "  + arrToString(ary));
@@ -14,7 +14,7 @@ public class ArrayMethods {
     ary = new int[][]{{}, {}, {}};
     System.out.println("Expected: [[], [], []]; Result: "  + arrToString(ary));
 
-    //arr2DSum test cases
+    //arr2DSum() test cases
 
     ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9, 10}};
     System.out.println("Expected: 55; Result: "  + arr2DSum(ary));
@@ -25,7 +25,7 @@ public class ArrayMethods {
     ary = new int[][]{{2}, {5}, {-1}};
     System.out.println("Expected: 6; Result: "  + arr2DSum(ary));
 
-    //swapRC test cases
+    //swapRC() test cases
 
     ary = new int[][]{{1, 2, 3}, {4, 5, 6}, {7, 8, 9}};
     System.out.println("Expected: [[1, 4, 7], [2, 5, 8], [3, 6, 9]]; Result: "  + arrToString(swapRC(ary)));
@@ -33,17 +33,36 @@ public class ArrayMethods {
     ary = new int[][]{{-2, 3}, {1, 5}, {-2, 3}};
     System.out.println("Expected: [[-2, 1, -2], [3, 5, 3]]; Result: "  + arrToString(swapRC(ary)));
 
-    //replaceNegative test cases
+    //replaceNegative() test cases
 
     ary = new int[][]{{1, -2, 3}, {-4, 5, -6}, {7, -8, -9}};
-    System.out.println("Original: " + arrToString(ary) +"; Result: ");
+    System.out.print("Original: " + arrToString(ary) +"; Result: ");
     replaceNegative(ary);
-    System.out.print(arrToString(ary));
+    System.out.println(arrToString(ary));
   
     ary = new int[][]{{}, {-4, 5}, {7, -8, -9}};
-    System.out.println("Original: " + arrToString(ary) +"; Result: ");
+    System.out.print("Original: " + arrToString(ary) +"; Result: ");
     replaceNegative(ary);
-    System.out.print(arrToString(ary));
+    System.out.println(arrToString(ary));
+
+    ary = new int[][]{{-1, 3, -5}, {6, -9, 4}};
+    System.out.print("Original: " + arrToString(ary) +"; Result: ");
+    replaceNegative(ary);
+    System.out.println(arrToString(ary));
+
+    //copy() test cases
+
+    ary = new int[][]{{0, 1}, {-2, 3}, {4, -5, -6}, {7, 8}, {-9}};
+    System.out.println("Original Array: " + arrToString(ary) + "; Array Copy: " + arrToString(copy(ary)));
+    System.out.println("Expected: false; Result: " + (ary == copy(ary)));
+
+    ary = new int[][]{{}, {-2, 3}, {6, 9, 4}, {52, -25}, {33}};
+    System.out.println("Original Array: " + arrToString(ary) + "; Array Copy: " + arrToString(copy(ary)));
+    System.out.println("Expected: false; Result: " + (ary == copy(ary)));
+
+    ary = new int[][]{{}};
+    System.out.println("Original Array: " + arrToString(ary) + "; Array Copy: " + arrToString(copy(ary)));
+    System.out.println("Expected: false; Result: " + (ary == copy(ary)));
   }
   //2. Copy your arrToString method from before.
   /**Return a String that represets the array in the format:
@@ -135,7 +154,19 @@ public class ArrayMethods {
   //You SHOULD write a helper method for this.
   //If you don't see a good way to do that, you should stop and look at prior methods.
   public static int[][] copy(int[][] nums){
-    return null;//placeholder so it compiles
+    int[][] nums2 = new int[nums.length][];
+    for (int i = 0; i < nums.length; i++) {
+      nums2[i] = returnCopy(nums[i]);
+    }
+    return nums2;
+  }
+
+  public static int[] returnCopy(int[]ary) {
+    int[] ary2 = new int[ary.length];
+    for (int i = 0; i < ary.length; i++) {
+      ary2[i] = ary[i];
+    }
+    return ary2;
   }
 
 }
