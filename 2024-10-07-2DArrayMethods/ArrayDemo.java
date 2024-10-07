@@ -11,7 +11,14 @@ public class ArrayDemo{
     System.out.println(Arrays.toString(ary).equals(arrToString(ary)));
 
     //countZeros2D test cases
-    
+    int[][] arr = new int[][]{{1, 2, 3}, {0, 5, 60}, {0, 0, 2}};
+    System.out.println("Expected: 3; Result: " + countZeros2D(arr));
+
+    arr = new int[][]{{}, {0, 10}, {-5, 14}};
+    System.out.println("Expected: 1; Result: " + countZeros2D(arr));
+
+    arr = new int[][]{{}};
+    System.out.println("Expected: 0; Result: " + countZeros2D(arr));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
