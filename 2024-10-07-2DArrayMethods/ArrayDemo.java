@@ -9,6 +9,9 @@ public class ArrayDemo{
     //Comparing Arrays.toString to arrToString
     int[] ary = new int[]{1, 2, 3};
     System.out.println(Arrays.toString(ary).equals(arrToString(ary)));
+
+    //countZeros2D test cases
+    
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
@@ -42,7 +45,15 @@ public class ArrayDemo{
 
   //1. Calculate and return how many elements equal zero in the 2D array.
   public static int countZeros2D(int[][] nums){
-    return 0;
+    int counter = 0;
+    for (int i = 0; i < nums.length; i++) {
+      for (int j = 0; j < nums[i].length; j++) {
+          if (nums[i][j] == 0) {
+            counter++;
+          }
+      }
+    }
+    return counter;
   }
 
   //2. Calculate the sum of a 2d array
