@@ -19,6 +19,19 @@ public class ArrayDemo{
 
     arr = new int[][]{{}};
     System.out.println("Expected: 0; Result: " + countZeros2D(arr));
+
+    //htmlTable test cases
+    arr = new int[][]{{1, 2, 3}, {4, 5, 6}};
+    System.out.println("Expected: <table><tr><td>1</td><td>2</td><td><3></td></tr><tr><td>4</td><td>5</td><td><6></td></tr></table>"
+    + "\nResult: " + htmlTable(arr));
+    
+    arr = new int[][]{{}, {2, 5}};
+    System.out.println("Expected: <table><tr></tr><tr><td>2</td><td>5</td></tr></table>"
+    + "\nResult: " + htmlTable(arr));
+
+    arr = new int[][]{{}};
+    System.out.println("Expected: <table><tr></tr></table>"
+    + "\nResult: " + htmlTable(arr));
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
