@@ -10,6 +10,9 @@ public class ArrayDemo{
     int[] ary = new int[]{1, 2, 3};
     System.out.println(Arrays.toString(ary).equals(arrToString(ary)));
 
+    ary = new int[]{};
+    System.out.println(Arrays.toString(ary).equals(arrToString(ary)));
+
     //countZeros2D test cases
     int[][] arr = new int[][]{{1, 2, 3}, {0, 5, 60}, {0, 0, 2}};
     System.out.println("Expected: 3; Result: " + countZeros2D(arr));
@@ -35,13 +38,13 @@ public class ArrayDemo{
   }
 
   //0. Include your prior methods to help you print a 1D/2D array of ints.
-  public static String arrToString(int[]nums){
+  public static String arrToString(int[]ary){
     String s = "[";
-    for (int i = 0; i < nums.length - 1; i++) {
-      s = s + nums[i] + ", ";
+    for (int i = 0; i < ary.length - 1; i++) {
+      s = s + ary[i] + ", ";
     }
-    if (nums.length > 0) {
-      s = s + nums[nums.length-1] + "]";
+    if (ary.length > 0) {
+      s = s + ary[ary.length-1] + "]";
     } else {
       s += "]";
     }
