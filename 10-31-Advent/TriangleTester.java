@@ -3,6 +3,11 @@ import java.io.File;
 import java.io.FileNotFoundException;
 
 public class TriangleTester {
+
+  public static void main(Strings[] args) {
+
+  }
+
   public static int countTrianglesA(String filename) {
     int[][] lengths = new int[][]();
 
@@ -17,12 +22,15 @@ public class TriangleTester {
         }
         count++;
       }
+      for (int i = 0; i < lengths.length; i++) {
+        if (lengths[i][])
+      }
       scan.close();//releases the file from your program
 
     } catch (FileNotFoundException ex) {
       //File not found what should you do?
       System.out.println("File not found");
-      return; //you can return from a void function just don't put a value.
+      return -1; //you can return from a void function just don't put a value.
     }
 
 
