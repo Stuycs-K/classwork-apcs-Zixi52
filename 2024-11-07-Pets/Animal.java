@@ -4,9 +4,9 @@ public class Animal {
   private String name;
 
   public Animal(String noise, int age, String name){
-    noise = this.noise;
-    age = this.age;
-    name = this.name;
+    this.noise = noise;
+    this.age = age;
+    this.name = name;
     //initialize the values (hint use this.varname to clarify)
   }
 
@@ -22,7 +22,7 @@ public class Animal {
   public void speak(){
     System.out.println("My name is " + getName() + ".");
     System.out.println("I am " + age + " years old.");
-    System.out.println("I say + " getNoise() + ".");
+    System.out.println("I say " + getNoise() + ".");
   }
 
   public String getName(){
