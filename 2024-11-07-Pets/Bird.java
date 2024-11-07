@@ -34,6 +34,10 @@ public class Bird extends Animal {
 
 
   //7:Override the getName() method so that a bid's name is "The Mighty NAME" instead of "NAME"
+
+  public String getName() {
+    return "The Mighty " + super.getName();
+  }
   //e.g. "The Mighty Polly" instead of just "Polly"
   //You can call the superclass' getName method using the syntax: super.getName()
 
