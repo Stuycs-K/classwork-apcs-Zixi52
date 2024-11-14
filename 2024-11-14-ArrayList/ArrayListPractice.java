@@ -29,4 +29,22 @@ public class ArrayListPractice {
     }
     return arrList;
   }
+
+  public static ArrayList<String> mixLists(ArrayList<String> a, ArrayList<String> b) {
+    ArrayList<String> arrList = new ArrayList<String>();
+    for (int i = 0; i < Math.min(a.size(), b.size()); i++) {
+      arrList.add(a.get(i));
+      arrList.add(b.get(i));
+    }
+    if (a.size() < b.size()) {
+      for (int i = a.size(); i < b.size(); i++) {
+        arrList.add(b.get(i));
+      }
+    } else if (b.size() < a.size()) {
+      for (int i = b.size(); i < a.size(); i++) {
+        arrList.add(a.get(i));
+      }
+    }
+    return arrList;
+}
 }
