@@ -6,5 +6,7 @@ public class Driver {
     System.out.println(newArrList);
     ArrayListPractice.replaceEmpty(newArrList);
     System.out.println(newArrList);
+    newArrList = ArrayListPractice.makeReversedList(newArrList);
+    System.out.println(newArrList);
   }
 }
