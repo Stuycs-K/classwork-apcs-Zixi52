@@ -15,6 +15,7 @@ public class Main {
       Scanner scan = new Scanner(file);
       //CODE THAT SCANS THE FILE.
       String dir = "N";
+      boolean changeDir = false;
       int countX=0;
       int countY=0;
       String s = scan.next();
