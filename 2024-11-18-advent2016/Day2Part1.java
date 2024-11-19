@@ -30,12 +30,43 @@ public class Day2Part1 {
     String[] instructions = s.split(",");
     int num = 5;
     ArrayList<Integer> arrList = new ArrayList<Integer>();
+    String total = "";
     for (int i = 0; i < instructions.length; i++) {
       for (int j = 0; j < instructions[i].length; j++) {
         if (instructions[i].get(j).equals("U")) {
-          num =
+          if (num <= 3) {
+            num = num;
+          } else {
+            num -= 3;
+          }
+        }
+        if (instructions[i].get(j).equals("D")) {
+          if (num >= 7) {
+            num = num;
+          } else {
+            num += 3;
+          }
+        }
+        if (instructions[i].get(j).equals("L")) {
+          if (num % 3 == 1) {
+            num = num;
+          } else {
+            num -= 1;
+          }
+        }
+        if (instructions[i].get(j).equals("U")) {
+          if (num % 3 == 0) {
+            num = num;
+          } else {
+            num += 1;
+          }
         }
       }
+      arrList.add(num);
     }
+    for (int i = 0; i < arrList.size(); i++) {
+      total += arrList.get(i);
+    }
+    return Integer.valueOf(total);
   }
 }
