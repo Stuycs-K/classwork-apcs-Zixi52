@@ -32,29 +32,29 @@ public class Day2Part1 {
     ArrayList<Integer> arrList = new ArrayList<Integer>();
     String total = "";
     for (int i = 0; i < instructions.length; i++) {
-      for (int j = 0; j < instructions[i].length; j++) {
-        if (instructions[i].get(j).equals("U")) {
+      for (int j = 0; j < instructions[i].length(); j++) {
+        if (instructions[i].charAt(j) == 'U') {
           if (num <= 3) {
             num = num;
           } else {
             num -= 3;
           }
         }
-        if (instructions[i].get(j).equals("D")) {
+        if (instructions[i].charAt(j) == 'D') {
           if (num >= 7) {
             num = num;
           } else {
             num += 3;
           }
         }
-        if (instructions[i].get(j).equals("L")) {
+        if (instructions[i].charAt(j) == 'L') {
           if (num % 3 == 1) {
             num = num;
           } else {
             num -= 1;
           }
         }
-        if (instructions[i].get(j).equals("U")) {
+        if (instructions[i].charAt(j) == 'R') {
           if (num % 3 == 0) {
             num = num;
           } else {
