@@ -1,8 +1,9 @@
 import java.util.Scanner;
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 
-public class Main {
+public class Day1Part2 {
 
   public static void main(String[] args) {
     System.out.println(distanceBlocks("directions.txt"));
@@ -22,6 +23,11 @@ public class Main {
       String s = scan.nextLine();
 
       String[] instructions = s.split(",\\s*");
+      ArrayList<ArrayList<Integer>> arrList = new ArrayList<ArrayList<Integer>>();
+      ArrayList<Integer> initial = new ArrayList<Integer>();
+      initial.add(0);
+      initial.add(0);
+      arrList.add(initial);
 
       for (int i = 0; i < instructions.length; i++) {
         char turn = instructions[i].charAt(0);
@@ -34,15 +40,29 @@ public class Main {
             direction = (direction + 1) % 4; // Turn right
         }
 
-        if (direction == 0) {
-          countY += blocks;
-        } else if (direction == 1) {
-          countX += blocks;
-        } else if (direction == 2) {
-          countY -= blocks;
-        } else {
-          countX -= blocks;
+        for (int j = 0; j < blocks; j++) {
+            if (direction == 0) {
+                countY++; // Move North
+            } else if (direction == 1) {
+                countX++; // Move East
+            } else if (direction == 2) {
+                countY--; // Move South
+            } else if (direction == 3) {
+                countX--; // Move West
+            }
+            ArrayList<Integer> current = new ArrayList<Integer>();
+            current.add(countX);
+            current.add(countY);
+            arrList.add(current);
+
+            for (int k = 0; k < arrList.size()-1; k++) {
+                if (arrList.get(k).equals(current)) {
+                    return Math.abs(countX) + Math.abs(countY);
+                }
+            }
         }
+
+        
       }
  
       total = Math.abs(countX) + Math.abs(countY);
