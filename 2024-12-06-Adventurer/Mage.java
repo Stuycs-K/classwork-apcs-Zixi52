@@ -84,7 +84,7 @@ public class Mage extends Adventurer{
       mana -= 10;
     }
     int dmg;
-    int roll = Math.random();
+    double roll = Math.random();
     if (roll >= 0.75) {
       dmg = 5;
     } else if (roll <= 0.25){
