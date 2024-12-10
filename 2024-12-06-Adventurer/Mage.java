@@ -41,7 +41,8 @@ public class Mage extends Adventurer{
       dmg = (int) Math.random()*5;
     }
     other.applyDamage(dmg);
-    return "Dealt " + dmg + " damage";
+    int n = restoreSpecial(1);
+    return "Dealt " + dmg + " damage; Restored " + n + " " + getSpecialName();
   }
 
   private int heal() {
@@ -57,24 +58,32 @@ public class Mage extends Adventurer{
   @Override
   public String support(Adventurer other) {
     int heal = heal();
+    String healMsg;
     if (other.getHP() + heal < other.getmaxHP()) {
       other.setHP(other.getHP() + heal);
+      healMsg = "Healed " + other.getName() + " " + heal + "HP; ";
     } else {
       other.setHP(other.getmaxHP());
+      healMsg = "At max HP; ";
     }
-    return "Healed " + other.getName() + " " + heal + " HP";
+    int n = other.restoreSpecial(5);
+    return healMsg + "Restored " + n + " " + other.getSpecialName();
+    
   }
 
   @Override
   public String support() {
     int heal = heal();
+    String healMsg;
     if (getHP() + heal < getmaxHP()) {
       setHP(getHP() + heal);
-      return "Healed " + heal + " HP";
+      healMsg = "Healed " + heal + " HP; ";
     } else {
       setHP(getmaxHP());
-      return "At Max HP";
+      healMsg = "At max HP; ";
     }
+    int n = restoreSpecial(5);
+    return healMsg + "Restored " + n + " " + getSpecialName();
   }
 
   @Override
