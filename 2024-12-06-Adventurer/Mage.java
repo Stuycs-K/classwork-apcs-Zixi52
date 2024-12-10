@@ -70,10 +70,11 @@ public class Mage extends Adventurer{
     int heal = heal();
     if (getHP() + heal < getmaxHP()) {
       setHP(getHP() + heal);
+      return "Healed " + heal + " HP";
     } else {
       setHP(getmaxHP());
+      return "At Max HP";
     }
-    return "Healed " + heal + " HP";
   }
 
   @Override
